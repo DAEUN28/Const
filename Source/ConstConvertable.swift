@@ -5,19 +5,14 @@
 //  Created by DaEun Kim on 2021/02/04.
 //
 
-import Foundation
-
+import UIKit
 
 protocol ConstConvertable {
   associatedtype Const: Constable
 }
 
 extension ConstConvertable {
-  func string(_ value: Const) -> String {
-    return value.object as! String
-  }
-
-  func int(_ value: Const) -> Int {
-    return value.object as! Int
+  func a<T>(_ value: Const) -> T {
+    return value.object as! T
   }
 }
