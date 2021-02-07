@@ -8,16 +8,16 @@ From:
 
 ```swift
 class ViewController: UIViewController {
-	struct Const {
-		static let width: CGFloat = 100
-		static let height: CGFloat = 100
-		static let backgroundColor: UIColor = .black
-	}
-	
-	override func viewDidLoad() {
-		let subview = UIView(frame: CGRect(x: 0, y: 0, width: Const.width, height: Const.height))
-		view.addSubview(subview)
-	}
+  struct Const {
+    static let width: CGFloat = 100
+    static let height: CGFloat = 100
+    static let backgroundColor: UIColor = .black
+  }
+
+  override func viewDidLoad() {
+    let subview = UIView(frame: CGRect(x: 0, y: 0, width: Const.width, height: Const.height))
+    view.addSubview(subview)
+  }
 }
 ```
 
@@ -25,8 +25,8 @@ To:
 
 ```swift
 class ViewController: UIViewController, ConstConvertable {
-	enum Const {
-		case width
+  enum Const {
+    case width
     case height
     case backgroundColor
     
@@ -36,12 +36,12 @@ class ViewController: UIViewController, ConstConvertable {
         case .backgroundColor: return UIColor.black
       }
     }
-	}
+  }
 	
-	override func viewDidLoad() {
-		let subview = UIView(frame: CGRect(x: 0, y: 0, width: a(.width), height: a(.height))
-		view.addSubview(subview)
-	}
+  override func viewDidLoad() {
+    let subview = UIView(frame: CGRect(x: 0, y: 0, width: a(.width), height: a(.height))
+    view.addSubview(subview)
+  }
 }
 ```
 
